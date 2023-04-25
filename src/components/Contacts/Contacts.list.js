@@ -17,5 +17,4 @@ ContactsList.propTypes = {
     })
   ).isRequired,
   onDelete: PropTypes.func.isRequired,
-  filterContacts: PropTypes.func.isRequired,
 };

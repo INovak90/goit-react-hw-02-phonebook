@@ -16,8 +16,9 @@ export class App extends Component {
     filter: '',
   };
   addContacts = newContacts => {
+    const newContactsLowercase = newContacts.name.toLowerCase();
     const findContact = this.state.contacts.find(
-      contact => contact.name === newContacts.name
+      contact => contact.name.toLowerCase() === newContactsLowercase
     );
     if (findContact) {
       return alert(`${newContacts.name} is already in contacts.`);
@@ -55,7 +56,6 @@ export class App extends Component {
         />
         <ContactsList
           options={this.filterContacts()}
-          filterContacts={this.filterContacts}
           onDelete={this.deleteContact}
         />
       </Layout>
